@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login Page</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css">
+</head>
+<body>
+    <div class="container" style="display: none;">
+        <b class="label darkMode"> <span id="toggle" onclick="changeMode();">Dark Mode</span></b>
+        <center><b class="title label">Login</b></center>
+        <form action="#" id="login-form">
+            <div class="user-details">
+                <div class="input-box">
+                    <input type="text" class="input-field" name="username" id="username" placeholder="User Name" autoComplete="off">
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" name="password" id="password" placeholder="password" autoComplete="off">
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" checked name="rememberMe" id="rememberMe" >
+                    <b class="label">remember Me</b>
+                </div>
+                <div class="button">
+                    <input type="button" value="Login">
+                </div>
+                <div class="footer">
+                    <center><span><b class="label">OR</b></span></center>
+                    <div class="social-media-icons">
+                        <i class="fa fa-google-plus"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-pinterest"></i>
+                    </div>
+                    <center><b class="label">Forgot password ?</b></center>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        var rootProp=document.documentElement.style;
+        var mode=true;
+
+        function  changeMode(){
+            if(mode)
+            {
+                darkMode();
+                document.getElementById("toggle").innerHTML="Light Mode";
+            }
+            else 
+            {
+                lightMde();
+                document.getElementById("toggle").innerHTML="Light Mode";
+            }
+            mode=!mode;
+        }
+        function lightMde()
+        {
+            rootProp.setProperty("--background1","rgba(230,230,230)");
+            rootProp.setProperty("--shadow1","rgba(119,119,119,0.5)");
+            rootProp.setProperty("--shadow2","rgba(255,255,255,.85)");
+            rootProp.setProperty("--labelColor","black");
+        }
+        function darkMode()
+        {
+            rootProp.setProperty("--background1","rgb(9 25 33)");
+            rootProp.setProperty("--shadow1","rgb(0 0 0 / 45%)");
+            rootProp.setProperty("--shadow2","rgb(255 255 255 /12%)");
+            rootProp.setProperty("--labelColor","rgb(255 255 255 /59%");
+        }
+    </script>
+</body>
+</html>
